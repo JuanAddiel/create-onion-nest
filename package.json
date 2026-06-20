@@ -1,6 +1,6 @@
 {
   "name": "create-onion-nest",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Create NestJS APIs with Onion/Clean Architecture defaults.",
   "type": "module",
   "bin": {
