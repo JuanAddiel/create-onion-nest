@@ -59,6 +59,42 @@ npm run lint
 
 ## Publishing This Package
 
+This repository includes a manual GitHub Action for versioned uploads to npm. You decide the version when you run the workflow.
+
+### Versioned Release Action
+
+Architecture:
+
+- GitHub Actions is the release entry point.
+- `workflow_dispatch` asks for the exact `version` and npm tag.
+- `npm version <version>` updates `package.json` and `package-lock.json`, then creates the release commit and Git tag.
+- `npm run build` verifies the TypeScript package before publishing.
+- `npm publish --access public --tag <tag>` uploads the package to npm.
+- The workflow pushes the release commit and tag back to GitHub.
+
+Required setup:
+
+1. Create an npm access token with publish permissions.
+2. Add it in GitHub as repository secret `NPM_TOKEN`.
+3. Make sure GitHub Actions has write permission for repository contents.
+
+How to use it:
+
+1. Go to GitHub > Actions > Release > Run workflow.
+2. Write the version you want to publish, for example `1.2.0`.
+3. Pick the npm tag, usually `latest`.
+4. Run the workflow.
+
+If a published version needs a fix, publish a new patch version. For example, if `1.2.0` had a bug, fix the code and run the workflow with `1.2.1`. npm does not allow publishing the exact same version twice.
+
+Use semantic versions like this:
+
+- `1.2.0`: new minor feature or planned upload.
+- `1.2.1`: fix for the same release line.
+- `2.0.0`: breaking change.
+
+Manual publish is still possible:
+
 ```bash
 npm install
 npm run build
