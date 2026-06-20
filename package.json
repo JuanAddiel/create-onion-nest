@@ -26,7 +26,7 @@
     "cli",
     "create"
   ],
-  "author": "",
+  "author": "Juan Addiel Leonardo",
   "license": "MIT",
   "engines": {
     "node": ">=20.0.0"
@@ -34,5 +34,13 @@
   "devDependencies": {
     "@types/node": "^20.14.10",
     "typescript": "^5.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanAddiel/create-onion-nest.git"
+  },
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/JuanAddiel/create-onion-nest/issues"
   }
 }
