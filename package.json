@@ -1,0 +1,38 @@
+{
+  "name": "create-onion-nest",
+  "version": "0.1.0",
+  "description": "Create NestJS APIs with Onion/Clean Architecture defaults.",
+  "type": "module",
+  "bin": {
+    "create-onion-nest": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "start": "node dist/cli.js"
+  },
+  "keywords": [
+    "nestjs",
+    "clean-architecture",
+    "onion-architecture",
+    "generator",
+    "cli",
+    "create"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
+  }
+}
